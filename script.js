@@ -148,20 +148,16 @@ container.appendChild(card)
 
 // handle labels
 function showLabels(labelsArray) {
-
 return labelsArray.map(label => `
 <span class="px-4 py-2 text-[10px] font-semibold rounded-full ${
 label.toLowerCase() === "bug" ? "bg-red-100 text-red-500" 
 : label.toLowerCase() === "help wanted" ? "bg-yellow-100 text-yellow-600" 
 : "bg-green-100 text-green-600"} flex items-center gap-1">
-
 <i class="fa-solid ${
 label.toLowerCase() === "bug" ? "fa-bug" 
 : label.toLowerCase() === "help wanted" ? "fa-life-ring" 
 : "fa-check"}"></i>
-
 ${label.toUpperCase()}
-
 </span>
 `).join("")
 
@@ -196,7 +192,6 @@ function openIssueModal(issue){
             }">${issue.priority.toUpperCase() === "HIGH" ? "High" : issue.priority.toUpperCase() === "MEDIUM" ? "Medium" : "Low"}</span>
             </div>
         </div>
-
         <div class="modal-action">
         <form method="dialog">
         <button class="btn btn-primary">Close</button>
@@ -212,7 +207,6 @@ function openIssueModal(issue){
 
 async function searchIssues(){
 showSpinner()
-
 const searchText = document.getElementById("searchText").value
 const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`)
 const data = await res.json()
