@@ -85,7 +85,6 @@ const card = document.createElement("div")
 card.className =
 `card  shadow hover:shadow-xl transition border-t-4
 ${issue.status === "open" ? "border-green-500" : "border-purple-500"}`
-
 card.innerHTML = `
     <div class="card-body">
         <div class="flex justify-between items-center">
@@ -120,7 +119,6 @@ card.innerHTML = `
 
 card.onclick = () => openIssueModal(issue)
 container.appendChild(card)
-
 })
 
 }
@@ -144,7 +142,6 @@ ${label.toUpperCase()}
 
 // ISSUE MODAL show
 function openIssueModal(issue){
-
     const modalbox = document.createElement("div")
     modalbox.className = "modal-box max-w-2xl"
     modalbox.innerHTML = `<h2 id="modalTitle" class="text-2xl font-bold mb-2">${issue.title}</h2>
@@ -183,7 +180,6 @@ function openIssueModal(issue){
     
 }
 // SEARCH ISSUES
-
 async function searchIssues(){
 showSpinner()
 const searchText = document.getElementById("searchText").value
